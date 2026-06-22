@@ -47,10 +47,10 @@ Claude will guide you through these in detail — but here's the gist:
 - **DecisionVault:** a firm admin opens Settings → **Integrations → Developer API** → create a key, and pastes it in.
 - **WealthCounsel:** My Practice → Practice Admin → **Integrations** → register an app for a Client ID/Secret. (This one is more involved and only covers contacts/matters — ask Irfad if you need it.)
 
-## Using these in Claude Code vs. Claude Cowork
+## Claude Code vs. Claude Cowork — which works today
 
-- **Claude Code (terminal):** `setup.sh` registers the tool automatically. Just restart Claude Code.
-- **Claude Cowork / Desktop:** add the tool in your MCP/Connectors settings, pointing to the tool's `dist/index.js` with `node`, and set the access key in its environment. Claude can give you the exact values during setup.
+- **Claude Code (recommended, works now).** These run as small servers **on your own computer**. `setup.sh` installs and turns them on; restart Claude Code and you're set. Your firm's keys and client data stay on your machine and go straight to your software — nothing routes through anyone else's servers. This is the best fit for privileged client data.
+- **Claude Cowork / claude.ai — not yet.** Cowork connects to tools from Anthropic's cloud, so it only works with *remote* connectors that have a public web address — it can't run a local tool on your computer. These tools are local-only for now (built for Claude Code). A hosted version for Cowork is on the roadmap; until then, use Claude Code. If you only have Cowork, reach out to Irfad.
 
 ## Need help?
 Ask Claude in this repo, or reach Irfad. Your access keys stay **on your own computer** (in `~/.config/...`, never in this repo) — they're never shared with other firms.
