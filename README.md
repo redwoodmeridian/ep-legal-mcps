@@ -43,4 +43,4 @@ cd lawmatics-mcp && ./setup.sh
 
 ## License
 
-© Irfad Imtiaz. All rights reserved.
+[MIT](LICENSE) © Redwood Meridian (My Legal Academy). Free to use, adapt, and build on.

@@ -27,5 +27,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/redwoodmeridian/ep-legal-mcps.git"
-  }
+  },
+  "license": "MIT"
 }
