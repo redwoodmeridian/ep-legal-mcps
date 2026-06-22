@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+.env
+.DS_Store
+# never commit captured tokens
+config.json
+.lawmatics-token

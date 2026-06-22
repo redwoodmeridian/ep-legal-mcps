@@ -1,0 +1,26 @@
+{
+  "name": "wealthcounsel-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the WealthCounsel API (contacts + matters sync). NOTE: WealthCounsel exposes no document-drafting API — this covers CRM sync only.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wealthcounsel-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "auth": "tsx src/index.ts auth",
+    "whoami": "tsx src/index.ts whoami"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}
