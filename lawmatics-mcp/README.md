@@ -23,8 +23,8 @@ All tool names are prefixed `lawmatics_`.
 ## Quick start (clone → one command)
 
 ```bash
-git clone https://github.com/meier-law-firm/lawmatics-mcp.git
-cd lawmatics-mcp
+git clone https://github.com/redwoodmeridian/ep-legal-mcps.git
+cd ep-legal-mcps/lawmatics-mcp
 ./setup.sh
 ```
 

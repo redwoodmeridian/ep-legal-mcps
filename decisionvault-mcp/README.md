@@ -7,8 +7,8 @@ DecisionVault is the **intake source of truth**: clients fill a questionnaire, a
 ## Quick start
 
 ```bash
-git clone https://github.com/meier-law-firm/decisionvault-mcp.git
-cd decisionvault-mcp
+git clone https://github.com/redwoodmeridian/ep-legal-mcps.git
+cd ep-legal-mcps/decisionvault-mcp
 ./setup.sh
 ```
 

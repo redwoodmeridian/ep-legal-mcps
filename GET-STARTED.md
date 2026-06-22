@@ -19,8 +19,8 @@ You only set up the one(s) your firm uses. Estate-planning firms often use all t
 1. Make sure you have [Claude Code](https://claude.com/claude-code) and [Node.js](https://nodejs.org) installed.
 2. Clone this repo and open it in Claude Code:
    ```bash
-   git clone https://github.com/redwoodmeridian/legal-mcps.git
-   cd legal-mcps
+   git clone https://github.com/redwoodmeridian/ep-legal-mcps.git
+   cd ep-legal-mcps
    claude
    ```
 3. Then just tell Claude, in plain English:
