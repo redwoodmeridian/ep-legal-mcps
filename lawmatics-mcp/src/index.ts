@@ -8,6 +8,7 @@ import { contactTools } from "./tools/contacts.js";
 import { matterTools } from "./tools/matters.js";
 import { structureTools } from "./tools/structure.js";
 import { workTools } from "./tools/work.js";
+import { extraTools } from "./tools/extras.js";
 import { requestTools } from "./tools/request.js";
 
 const allTools: Tool[] = [
@@ -15,11 +16,12 @@ const allTools: Tool[] = [
   ...matterTools,
   ...structureTools,
   ...workTools,
+  ...extraTools,
   ...requestTools,
 ];
 
 function buildServer(): McpServer {
-  const server = new McpServer({ name: "lawmatics-mcp", version: "0.1.2" });
+  const server = new McpServer({ name: "lawmatics-mcp", version: "0.2.0" });
   for (const tool of allTools) {
     server.tool(tool.name, tool.description, tool.inputSchema, async (args: unknown) => {
       try {

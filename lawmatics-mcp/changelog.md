@@ -1,4 +1,17 @@
 # Changelog
+## [0.2.0] — 2026-07-02
+
+Feedback round from Meier Law Firm field testing (Josh's 2026-06-23 email).
+
+### Added
+- 11 dedicated tools (36 total): `list_files` + `download_file`, `list_invoices`, `list_time_entries`, `list_tags` + `attach_tags`/`detach_tags` (attach = automation trigger), `search_companies` (with finders), `list_relationships`, `list_forms` + `get_form_entries`.
+- `get_form_entries` answers the "structured form answers" platform question: `/v1/forms/{uuid}/entries` exposes submitted entries — not just the PDF.
+
+### Answered (platform facts)
+- Email/communications log: NOT exposed by the Lawmatics API (`/v1/emails`, `/v1/messages` don't exist).
+- Rate limit: 50 req/min per firm (client already auto-backs off on 429).
+- Read-only credential: tokens are scopeless; least-privilege = a restricted Lawmatics user generating its own token.
+
 
 All notable changes to `lawmatics-mcp`.
 
