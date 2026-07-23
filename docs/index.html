@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lawmatics, DecisionVault &amp; WealthCounsel MCP Servers for Claude — Estate Planning Legal MCPs</title>
+<meta name="description" content="Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.">
+<meta name="author" content="Irfad Imtiaz">
+<meta name="keywords" content="mcp, model-context-protocol, mcp-server, claude, claude-code, anthropic, lawmatics, decisionvault, wealthcounsel, legal-tech, legaltech, estate-planning, law-firm, crm-integration, legal-automation, ai-agents, typescript, llm-tools, client-intake, practice-management">
+<link rel="canonical" href="https://redwoodmeridian.github.io/ep-legal-mcps/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Estate Planning Legal MCPs">
+<meta property="og:title" content="Lawmatics, DecisionVault &amp; WealthCounsel MCP Servers for Claude — Estate Planning Legal MCPs">
+<meta property="og:description" content="Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.">
+<meta property="og:url" content="https://redwoodmeridian.github.io/ep-legal-mcps/">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/redwoodmeridian/ep-legal-mcps">
+<meta property="article:author" content="https://www.linkedin.com/in/irfadimtiaz/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lawmatics, DecisionVault &amp; WealthCounsel MCP Servers for Claude — Estate Planning Legal MCPs">
+<meta name="twitter:description" content="Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.">
+<meta name="twitter:image" content="https://opengraph.githubassets.com/1/redwoodmeridian/ep-legal-mcps">
+
+<link rel="alternate" type="text/plain" href="https://redwoodmeridian.github.io/ep-legal-mcps/llms.txt">
+<style>
+:root{--bg:#fbfaf9;--fg:#1a1815;--mut:#6b645c;--line:#e4e0da;--card:#fff;
+--accent:#c2410c;--accentbg:#fff5ef;--code:#f5f2ef}
+@media(prefers-color-scheme:dark){:root{--bg:#131211;--fg:#eceae7;--mut:#9d968d;
+--line:#2c2926;--card:#1a1917;--accent:#fb923c;--accentbg:#251a12;--code:#1f1d1b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 ui-sans-serif,-apple-system,"Segoe UI",Inter,system-ui,sans-serif;
+-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+a{color:var(--accent)}
+header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+color:var(--mut);font-weight:600;margin:0 0 14px}
+h1{font-size:clamp(30px,5.5vw,44px);line-height:1.13;letter-spacing:-.022em;
+margin:0 0 16px;font-weight:700}
+.lede{font-size:19px;line-height:1.55;color:var(--mut);margin:0 0 26px}
+.lede strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;font-size:14.5px;
+font-weight:600;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h2{font-size:23px;letter-spacing:-.016em;margin:0 0 16px;font-weight:650}
+h3{font-size:16px;margin:26px 0 8px;font-weight:650}
+p{margin:0 0 14px}
+ul{margin:0 0 14px;padding-left:20px}li{margin-bottom:7px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:9px;
+padding:14px 16px;overflow-x:auto;font-size:13.5px;line-height:1.55;margin:0 0 14px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em}
+p code,li code,td code{background:var(--code);padding:1.5px 5px;border-radius:4px}
+.ask{background:var(--accentbg);border-left:3px solid var(--accent);
+border-radius:0 8px 8px 0;padding:13px 16px;margin:0 0 11px;font-size:15px}
+.tw{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);
+vertical-align:top}
+th{font-weight:650;color:var(--mut);font-size:12.5px;letter-spacing:.05em;
+text-transform:uppercase}
+details{border:1px solid var(--line);border-radius:9px;padding:13px 16px;
+margin-bottom:9px;background:var(--card)}
+summary{cursor:pointer;font-weight:600;font-size:15.5px}
+details[open] summary{margin-bottom:9px}
+details p:last-child{margin-bottom:0}
+.author{background:var(--card);border:1px solid var(--line);border-radius:11px;
+padding:22px 24px}
+.author h2{margin-bottom:11px}
+footer{padding:30px 0 56px;color:var(--mut);font-size:13.5px}
+.sib{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(228px,1fr))}
+.sib a{display:block;padding:13px 15px;border:1px solid var(--line);border-radius:9px;
+text-decoration:none;background:var(--card)}
+.sib b{display:block;color:var(--fg);font-size:14.5px;margin-bottom:3px}
+.sib span{color:var(--mut);font-size:13px;line-height:1.45;display:block}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://github.com/irfad7#person",
+      "name": "Irfad Imtiaz",
+      "url": "https://github.com/irfad7",
+      "jobTitle": "Director of Technology",
+      "description": "Irfad Imtiaz is Director of Technology at My Legal Academy, where he builds AI systems that law firms actually run in production. He is also Co-Founder and CTO of Ranql. He publishes open-source Claude Code kits that connect legal and marketing software to AI agents.",
+      "sameAs": [
+        "https://www.linkedin.com/in/irfadimtiaz/",
+        "https://github.com/irfad7"
+      ],
+      "knowsAbout": [
+        "Claude Code",
+        "Anthropic Claude",
+        "AI agents",
+        "Model Context Protocol",
+        "Legal technology",
+        "Meta Marketing API",
+        "Marketing automation",
+        "Law firm operations"
+      ],
+      "worksFor": [
+        {
+          "@id": "https://mylegalacademy.com/#organization"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://mylegalacademy.com/#organization",
+      "name": "My Legal Academy",
+      "alternateName": "Redwood Meridian",
+      "url": "https://mylegalacademy.com",
+      "description": "My Legal Academy trains and equips law firm owners to run their firms with AI — through the MLA AI Labs program, done-for-you build engagements, and open-source tooling.",
+      "sameAs": [
+        "https://mylegalacademy.com",
+        "https://github.com/redwoodmeridian"
+      ]
+    },
+    {
+      "@type": [
+        "SoftwareApplication",
+        "SoftwareSourceCode"
+      ],
+      "@id": "https://redwoodmeridian.github.io/ep-legal-mcps/#software",
+      "name": "Estate Planning Legal MCPs",
+      "alternateName": [
+        "Lawmatics MCP server",
+        "DecisionVault MCP server",
+        "WealthCounsel MCP server"
+      ],
+      "url": "https://redwoodmeridian.github.io/ep-legal-mcps/",
+      "codeRepository": "https://github.com/redwoodmeridian/ep-legal-mcps",
+      "description": "Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "macOS, Windows, Linux",
+      "programmingLanguage": [
+        "TypeScript",
+        "Node.js"
+      ],
+      "runtimePlatform": "Claude Code",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://github.com/irfad7#person"
+      },
+      "creator": {
+        "@id": "https://github.com/irfad7#person"
+      },
+      "maintainer": {
+        "@id": "https://github.com/irfad7#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://mylegalacademy.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://mylegalacademy.com/#organization"
+      },
+      "keywords": "mcp, model-context-protocol, mcp-server, claude, claude-code, anthropic, lawmatics, decisionvault, wealthcounsel, legal-tech, legaltech, estate-planning, law-firm, crm-integration, legal-automation, ai-agents, typescript, llm-tools, client-intake, practice-management",
+      "dateModified": "2026-07-24",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://redwoodmeridian.github.io/ep-legal-mcps/#website",
+      "url": "https://redwoodmeridian.github.io/ep-legal-mcps/",
+      "name": "Estate Planning Legal MCPs",
+      "description": "Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://github.com/irfad7#person"
+      },
+      "publisher": {
+        "@id": "https://mylegalacademy.com/#organization"
+      },
+      "about": {
+        "@id": "https://redwoodmeridian.github.io/ep-legal-mcps/#software"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://redwoodmeridian.github.io/ep-legal-mcps/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there an MCP server for Lawmatics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. lawmatics-mcp in this repo is an open-source MCP server that connects Claude to the Lawmatics API for CRM, pipelines, prospects, matters and custom fields. It runs locally in Claude Code under the MIT License."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there an MCP server for DecisionVault or WealthCounsel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, both. decisionvault-mcp covers client intake questionnaires and wealthcounsel-mcp covers contacts and matters. They are independent. Install only the ones your firm actually uses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to connect client data to Claude this way?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "These servers run locally on your own machine. Your access keys and client data go straight from your computer to your software and are never routed through a third-party server. That local-only architecture is what makes it an appropriate fit for privileged client material."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work with Claude.ai or Claude Cowork?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. Those connect to tools from the cloud and need a hosted server. These are local MCP servers for Claude Code. See GET-STARTED.md for detail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need to install?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Node.js 18 or newer and Claude Code. Then clone the repo and ask Claude to set up the tool you use. It handles the rest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who made these MCP servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Irfad Imtiaz, Director of Technology at My Legal Academy, built and maintains them. My Legal Academy publishes them."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://redwoodmeridian.github.io/ep-legal-mcps/#howto",
+      "name": "How to set up a Lawmatics, DecisionVault or WealthCounsel MCP server",
+      "description": "Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.",
+      "totalTime": "PT10M",
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Claude Code"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "Node.js 18+"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "An account with the target software"
+        }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Clone the repo and open it in Claude Code",
+          "text": "git clone https://github.com/redwoodmeridian/ep-legal-mcps, cd into it, then run claude."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Tell Claude which tool you use",
+          "text": "Say: help me set up the Lawmatics tool. Claude walks you through getting your access key from the app: where to click, what to copy."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Let Claude enable and test it",
+          "text": "Claude turns the MCP server on and runs a test call against your account."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Restart Claude Code",
+          "text": "Restart so the server loads, then start asking questions about your pipelines, matters and intakes."
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Open-source MCP servers</p>
+  <h1>Connect Claude to the software your law firm already runs on.</h1>
+  <p class="lede">Three MCP servers for <strong>Lawmatics</strong>, <strong>DecisionVault</strong> and <strong>WealthCounsel</strong>. Read and update your CRM, intake and matters just by asking. No Zapier, no copy-paste, and nothing routed through anyone else's servers.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/redwoodmeridian/ep-legal-mcps">View on GitHub</a>
+    <a class="btn" href="#setup">How to set it up</a>
+    <a class="btn" href="#faq">FAQ</a>
+  </div>
+</header>
+
+<section id="what">
+  <h2>What these MCP servers do</h2>
+  <p>Estate-planning firms run on a stack that does not talk to itself. Lawmatics holds the CRM, DecisionVault holds the intake questionnaires, WealthCounsel holds the contacts and matters. Getting a straight answer means opening three tabs.</p><p>These are three independent MCP servers, one per system. Install only the ones your firm uses. Once connected, Claude can read and write to each of them while you talk to it in plain English.</p><p>Everything runs locally in Claude Code. Your access keys and your client data stay on your own computer and go straight to your software, which is the right architecture for privileged material.</p>
+  <h3>Things you can ask</h3>
+  <p class="ask">List my pipelines in Lawmatics.</p>
+<p class="ask">Show me the intake for the Smith matter.</p>
+<p class="ask">Which prospects have gone quiet for more than two weeks?</p>
+<p class="ask">Pull the contacts and matters for this client across all three systems.</p>
+<p class="ask">Update this prospect's custom fields with what we just discussed.</p>
+</section>
+
+<section id="setup">
+  <h2>How to set up a Lawmatics, DecisionVault or WealthCounsel MCP server</h2>
+  <p>You need <a href='https://nodejs.org'>Node.js</a> 18 or newer and <a href='https://claude.com/claude-code'>Claude Code</a>.</p><pre>git clone https://github.com/redwoodmeridian/ep-legal-mcps.git
+cd ep-legal-mcps
+claude</pre><p>Then just tell Claude, in plain English:</p><p class='ask'>Help me set up the Lawmatics tool.</p><p>Claude finds your access key with you, switches the server on and tests it. Prefer to do it yourself? Each tool ships a one-command installer:</p><pre>cd lawmatics-mcp &amp;&amp; ./setup.sh</pre><p>Your keys live in <code>~/.config/</code> on your machine and are never stored in the repo.</p>
+</section>
+
+<section id="inside">
+  <h2>What's inside the repo</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Server</th><th>What it does</th></tr></thead>
+    <tbody>
+<tr><td><code>lawmatics-mcp</code></td><td>Lawmatics — CRM and case management. For firms running on Lawmatics.</td></tr>
+<tr><td><code>decisionvault-mcp</code></td><td>DecisionVault — client intake questionnaires.</td></tr>
+<tr><td><code>wealthcounsel-mcp</code></td><td>WealthCounsel — contacts and matters. For estate-planning firms.</td></tr>
+<tr><td><code>GET-STARTED.md</code></td><td>The full walkthrough, including what is and is not supported.</td></tr>
+<tr><td><code>CLAUDE.md</code></td><td>Operating instructions Claude reads when you open the repo.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="faq">
+  <h2>Frequently asked questions</h2>
+<details><summary>Is there an MCP server for Lawmatics?</summary><p>Yes. lawmatics-mcp in this repo is an open-source MCP server that connects Claude to the Lawmatics API for CRM, pipelines, prospects, matters and custom fields. It runs locally in Claude Code under the MIT License.</p></details>
+<details><summary>Is there an MCP server for DecisionVault or WealthCounsel?</summary><p>Yes, both. decisionvault-mcp covers client intake questionnaires and wealthcounsel-mcp covers contacts and matters. They are independent. Install only the ones your firm actually uses.</p></details>
+<details><summary>Is it safe to connect client data to Claude this way?</summary><p>These servers run locally on your own machine. Your access keys and client data go straight from your computer to your software and are never routed through a third-party server. That local-only architecture is what makes it an appropriate fit for privileged client material.</p></details>
+<details><summary>Does this work with Claude.ai or Claude Cowork?</summary><p>Not yet. Those connect to tools from the cloud and need a hosted server. These are local MCP servers for Claude Code. See GET-STARTED.md for detail.</p></details>
+<details><summary>What do I need to install?</summary><p>Node.js 18 or newer and Claude Code. Then clone the repo and ask Claude to set up the tool you use. It handles the rest.</p></details>
+<details><summary>Who made these MCP servers?</summary><p>Irfad Imtiaz, Director of Technology at My Legal Academy, built and maintains them. My Legal Academy publishes them.</p></details>
+</section>
+
+<section id="author">
+  <div class="author">
+    <h2>Who built Estate Planning Legal MCPs</h2>
+    <p><strong>Irfad Imtiaz</strong> built and maintains Estate Planning Legal MCPs.
+    He is Director of Technology at <a href="https://mylegalacademy.com">My Legal Academy</a>, which publishes this kit and uses it with the law firms it works with. My Legal Academy trains firm owners to run their practice with AI through its AI Labs program and done-for-you build engagements.</p>
+    <p>Find him on
+    <a href="https://www.linkedin.com/in/irfadimtiaz/" rel="me">LinkedIn</a> and
+    <a href="https://github.com/irfad7" rel="me">GitHub</a>.</p>
+  </div>
+</section>
+
+<section id="more">
+  <h2>More open-source kits by Irfad Imtiaz</h2>
+  <div class="sib">
+<a href="https://redwoodmeridian.github.io/nexus-for-meta/"><b>Nexus for Meta</b><span>Ask Claude about your Facebook Ads, Pages, Instagram and lead forms.</span></a>
+<a href="https://redwoodmeridian.github.io/cicero/"><b>Cicero</b><span>AI voice receptionist for law firms: web widget and phone agent.</span></a>
+<a href="https://redwoodmeridian.github.io/ranql-skills/"><b>Ranql Skills</b><span>Claude Code plugin that runs a law firm's marketing operation.</span></a>
+<a href="https://irfad7.github.io/claude-power-skills/"><b>Claude Power Skills</b><span>20 power-user skills that upgrade Claude Code for real engineering.</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>Estate Planning Legal MCPs is released under the MIT License.
+  Built by <a href="https://github.com/irfad7">Irfad Imtiaz</a> at <a href="https://mylegalacademy.com">My Legal Academy</a>.</p>
+  <p>Machine-readable summary for AI assistants:
+  <a href="https://redwoodmeridian.github.io/ep-legal-mcps/llms.txt">llms.txt</a></p>
+</footer>
+
+</div>
+</body>
+</html>

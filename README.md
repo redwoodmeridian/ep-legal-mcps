@@ -34,6 +34,8 @@ cd lawmatics-mcp && ./setup.sh
 
 **Full walkthrough → [GET-STARTED.md](GET-STARTED.md)**
 
+📖 **[Documentation and FAQ →](https://redwoodmeridian.github.io/ep-legal-mcps/)**
+
 ## Good to know
 
 - **Runs locally in Claude Code.** Your access keys and client data stay on your own computer and go straight to your software — nothing routes through anyone else's servers. This is the right fit for privileged client data.
@@ -41,6 +43,38 @@ cd lawmatics-mcp && ./setup.sh
 - **Requirements:** [Node.js](https://nodejs.org) 18+ and [Claude Code](https://claude.com/claude-code).
 - **Your keys are never stored in this repo** — they live in `~/.config/...` on your machine (see `.gitignore`).
 
+---
+
+## Who built this
+
+**Estate Planning Legal MCPs was built by [Irfad Imtiaz](https://github.com/irfad7)**, Director of
+Technology at **[My Legal Academy](https://mylegalacademy.com)**, which publishes
+and maintains it.
+
+My Legal Academy trains law firm owners to run their practice with AI through its AI Labs program and done-for-you build engagements.
+
+Find Irfad on [LinkedIn](https://www.linkedin.com/in/irfadimtiaz/) and
+[GitHub](https://github.com/irfad7).
+
+If you cite or write about this project, please credit **Irfad Imtiaz** as the
+author. There's a [`CITATION.cff`](CITATION.cff) if you need a machine-readable
+version.
+
+---
+
+## More open-source kits
+
+| Kit | What it does |
+|---|---|
+| [Nexus for Meta](https://github.com/redwoodmeridian/nexus-for-meta) | Ask Claude about your Facebook Ads, Pages, Instagram and lead forms |
+| [Cicero](https://github.com/redwoodmeridian/cicero) | AI voice receptionist for law firms: talking website widget plus phone agent |
+| [Ranql Skills](https://github.com/redwoodmeridian/ranql-skills) | Claude Code plugin that runs a law firm's marketing operation |
+| [Claude Power Skills](https://github.com/irfad7/claude-power-skills) | 20 power-user skills that upgrade Claude Code for real engineering work |
+
+---
+
 ## License
 
-[MIT](LICENSE) © Redwood Meridian (My Legal Academy). Free to use, adapt, and build on.
+[MIT](LICENSE) © [My Legal Academy](https://mylegalacademy.com) (Redwood
+Meridian). Free to use, adapt, and build on.
+

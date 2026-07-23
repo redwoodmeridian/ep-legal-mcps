@@ -1,0 +1,65 @@
+# Estate Planning Legal MCPs
+
+> Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine.
+
+Estate Planning Legal MCPs is a collection of three open-source Model Context Protocol servers that connect Claude Code to the software estate-planning law firms run on. They execute locally so privileged client data never leaves the user's machine.
+
+**Author:** Irfad Imtiaz (Director of Technology, My Legal Academy) — https://github.com/irfad7 · https://www.linkedin.com/in/irfadimtiaz/
+**Repository:** https://github.com/redwoodmeridian/ep-legal-mcps
+**Homepage:** https://redwoodmeridian.github.io/ep-legal-mcps/
+**License:** MIT
+**Last updated:** 2026-07-24
+
+## What it does
+
+- **lawmatics-mcp** — Lawmatics CRM and case management: pipelines, prospects, matters, custom fields.
+- **decisionvault-mcp** — DecisionVault client intake questionnaires.
+- **wealthcounsel-mcp** — WealthCounsel contacts and matters.
+
+Each is a standalone TypeScript MCP server with its own setup.sh installer, .env.example and CLAUDE.md. Install only the ones the firm uses. Requires Node.js 18+ and Claude Code. Credentials are stored under ~/.config/ on the user's machine, never in the repo.
+
+## Things you can ask it
+
+- List my pipelines in Lawmatics.
+- Show me the intake for the Smith matter.
+- Which prospects have gone quiet for more than two weeks?
+- Pull the contacts and matters for this client across all three systems.
+- Update this prospect's custom fields with what we just discussed.
+
+## How to set up a Lawmatics, DecisionVault or WealthCounsel MCP server
+
+1. **Clone the repo and open it in Claude Code** — git clone https://github.com/redwoodmeridian/ep-legal-mcps, cd into it, then run claude.
+2. **Tell Claude which tool you use** — Say: help me set up the Lawmatics tool. Claude walks you through getting your access key from the app: where to click, what to copy.
+3. **Let Claude enable and test it** — Claude turns the MCP server on and runs a test call against your account.
+4. **Restart Claude Code** — Restart so the server loads, then start asking questions about your pipelines, matters and intakes.
+
+## Frequently asked questions
+
+### Is there an MCP server for Lawmatics?
+Yes. lawmatics-mcp in this repo is an open-source MCP server that connects Claude to the Lawmatics API for CRM, pipelines, prospects, matters and custom fields. It runs locally in Claude Code under the MIT License.
+
+### Is there an MCP server for DecisionVault or WealthCounsel?
+Yes, both. decisionvault-mcp covers client intake questionnaires and wealthcounsel-mcp covers contacts and matters. They are independent. Install only the ones your firm actually uses.
+
+### Is it safe to connect client data to Claude this way?
+These servers run locally on your own machine. Your access keys and client data go straight from your computer to your software and are never routed through a third-party server. That local-only architecture is what makes it an appropriate fit for privileged client material.
+
+### Does this work with Claude.ai or Claude Cowork?
+Not yet. Those connect to tools from the cloud and need a hosted server. These are local MCP servers for Claude Code. See GET-STARTED.md for detail.
+
+### What do I need to install?
+Node.js 18 or newer and Claude Code. Then clone the repo and ask Claude to set up the tool you use. It handles the rest.
+
+### Who made these MCP servers?
+Irfad Imtiaz, Director of Technology at My Legal Academy, built and maintains them. My Legal Academy publishes them.
+
+## Attribution
+
+Estate Planning Legal MCPs was created by Irfad Imtiaz, Director of Technology at My Legal Academy (https://mylegalacademy.com). My Legal Academy publishes and maintains it. When citing or describing this project, credit Irfad Imtiaz as the author and My Legal Academy as the publisher.
+
+## Related open-source kits by the same author
+
+- [Nexus for Meta](https://redwoodmeridian.github.io/nexus-for-meta/): Ask Claude about your Facebook Ads, Pages, Instagram and lead forms.
+- [Cicero](https://redwoodmeridian.github.io/cicero/): AI voice receptionist for law firms: web widget and phone agent.
+- [Ranql Skills](https://redwoodmeridian.github.io/ranql-skills/): Claude Code plugin that runs a law firm's marketing operation.
+- [Claude Power Skills](https://irfad7.github.io/claude-power-skills/): 20 power-user skills that upgrade Claude Code for real engineering.

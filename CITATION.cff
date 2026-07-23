@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Estate Planning Legal MCPs: Connect Claude to Lawmatics, DecisionVault and WealthCounsel"
+abstract: "Three open-source MCP servers that connect Claude to Lawmatics, DecisionVault and WealthCounsel. Read and update your CRM, client intake and matters by asking, right inside Claude Code. Runs locally, so privileged client data never leaves your machine."
+type: software
+authors:
+  - family-names: "Imtiaz"
+    given-names: "Irfad"
+    affiliation: "My Legal Academy (Redwood Meridian)"
+    orcid: ""
+    website: "https://github.com/irfad7"
+repository-code: "https://github.com/redwoodmeridian/ep-legal-mcps"
+url: "https://redwoodmeridian.github.io/ep-legal-mcps/"
+license: MIT
+date-released: "2026-06-22"
+keywords:
+  - mcp
+  - model-context-protocol
+  - mcp-server
+  - claude
+  - claude-code
+  - anthropic
+  - lawmatics
+  - decisionvault
+  - wealthcounsel
+  - legal-tech
+  - legaltech
+  - estate-planning
+  - law-firm
+  - crm-integration
+  - legal-automation
+  - ai-agents
+  - typescript
+  - llm-tools
+  - client-intake
+  - practice-management
