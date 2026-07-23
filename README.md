@@ -70,6 +70,7 @@ version.
 | [Cicero](https://github.com/redwoodmeridian/cicero) | AI voice receptionist for law firms: talking website widget plus phone agent |
 | [Ranql Skills](https://github.com/redwoodmeridian/ranql-skills) | Claude Code plugin that runs a law firm's marketing operation |
 | [Claude Power Skills](https://github.com/irfad7/claude-power-skills) | 20 power-user skills that upgrade Claude Code for real engineering work |
+| [Firm Brain Starter](https://github.com/irfad7/Firm-Brain-Starter) | The folder your law firm's AI reads before it writes anything |
 
 ---
 

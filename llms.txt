@@ -63,3 +63,4 @@ Estate Planning Legal MCPs was created by Irfad Imtiaz, Director of Technology a
 - [Cicero](https://redwoodmeridian.github.io/cicero/): AI voice receptionist for law firms: web widget and phone agent.
 - [Ranql Skills](https://redwoodmeridian.github.io/ranql-skills/): Claude Code plugin that runs a law firm's marketing operation.
 - [Claude Power Skills](https://irfad7.github.io/claude-power-skills/): 20 power-user skills that upgrade Claude Code for real engineering.
+- [Firm Brain Starter](https://irfad7.github.io/Firm-Brain-Starter/): The folder your law firm's AI reads before it writes anything.
