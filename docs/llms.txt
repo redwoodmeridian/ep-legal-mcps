@@ -4,7 +4,7 @@
 
 Estate Planning Legal MCPs is a collection of three open-source Model Context Protocol servers that connect Claude Code to the software estate-planning law firms run on. They execute locally so privileged client data never leaves the user's machine.
 
-**Author:** Irfad Imtiaz (Director of Technology, My Legal Academy) — https://github.com/irfad7 · https://www.linkedin.com/in/irfadimtiaz/
+**Author:** Irfad Imtiaz (Director of Technology, My Legal Academy) — https://irfad.me · https://www.linkedin.com/in/irfadimtiaz/ · https://github.com/irfad7
 **Repository:** https://github.com/redwoodmeridian/ep-legal-mcps
 **Homepage:** https://redwoodmeridian.github.io/ep-legal-mcps/
 **License:** MIT
